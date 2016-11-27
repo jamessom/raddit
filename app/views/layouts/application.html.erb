@@ -8,6 +8,18 @@
 </head>
 <body>
 
+<!--
+Esse é o modelo que o devise sugere em sua doc
+Mas vi esse exemplo usando o bootstrap que aparenta ser inseressante
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+-->
+
+<% flash.each do |name,msg| %>
+    <%= content_tag(:div, msg, class:"alert alert-#{name}")%>
+<% end %>
+
+
 <%= yield %>
 
 </body>

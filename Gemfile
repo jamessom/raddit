@@ -38,3 +38,6 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+# Instalar Devise para controle de usuários
+gem 'devise', '~> 3.3.0'
+
