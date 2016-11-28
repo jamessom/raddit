@@ -8,19 +8,32 @@
 </head>
 <body>
 
-<!--
-Esse é o modelo que o devise sugere em sua doc
-Mas vi esse exemplo usando o bootstrap que aparenta ser inseressante
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
--->
+  <!--
+  Esse é o modelo que o devise sugere em sua doc
+  Mas vi esse exemplo usando o bootstrap que aparenta ser inseressante
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+  -->
 
-<% flash.each do |name,msg| %>
-    <%= content_tag(:div, msg, class:"alert alert-#{name}")%>
-<% end %>
+  <% flash.each do |name,msg| %>
+      <%= content_tag(:div, msg, class:"alert alert-#{name}")%>
+  <% end %>
+
+  <% if user_signed_in? %>
+    <ul>
+      <li><%= link_to 'Enviar Link', new_link_path %></li>
+      <li><%= link_to 'Conta', edit_user_registration_path %></li>
+      <li><%= link_to 'Sair', destroy_user_session_path, :method => :delete %></li>
+    </ul>
+  <% else %>
+    <ul>
+      <li><%= link_to 'Criar Conta', new_user_registration_path %></li>
+      <li><%= link_to 'Logar', new_user_session_path %></li>
+    </ul>
+  <% end %>
 
 
-<%= yield %>
+  <%= yield %>
 
 </body>
 </html>
