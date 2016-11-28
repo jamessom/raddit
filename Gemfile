@@ -41,3 +41,6 @@ gem 'spring',        group: :development
 # Instalar Devise para controle de usuários
 gem 'devise', '~> 3.3.0'
 
+# Adicionar suporte ao Twitter Bootstrap
+gem 'bootstrap-sass', '~> 3.2.0.2'
+
