@@ -1,6 +1,6 @@
-source 'https://rubygems.org'
-
-
+source 'http://rubygems.org'
+#source 'http://rubygems.org'
+ruby '2.2.2'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.5'
 # Use sqlite3 as the database for Active Record
@@ -46,3 +46,6 @@ gem 'bootstrap-sass', '~> 3.2.0.2'
 
 # Adiciona votação ao sistema
 gem 'acts_as_votable', '~> 0.10.0'
+
+# Adiciona suporte ....
+gem 'simple_form', '~> 3.0', '>= 3.0.3'
