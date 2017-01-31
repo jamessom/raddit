@@ -1,5 +1,5 @@
 <!--
-Rapaz a mudan;a foi grande
+Rapaz a mudança foi grande
 Tenho de estudar um pouco mais para entender o que aconteceu aqui.
 -->
 
@@ -24,7 +24,7 @@ Tenho de estudar um pouco mais para entender o que aconteceu aqui.
   <h1>
     <a href="<%= @link.url %>"><%= @link.title %></a>
     <br>
-    <small>Enviado por <%= @link.user.email %></small>
+    <small><%= "Enviado por " + @link.user.email if defined? "Enviado por " + @link.user.email %></small>
   </h1>
 </div>
 

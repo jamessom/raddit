@@ -35,7 +35,8 @@ Tenho de estudar um pouco mais para entender o que aconteceu aqui.
       <h2>
         <%= link_to link.title, link %>
         <br>
-        <small class="author">Enviado <%= time_ago_in_words(link.created_at) %> por <%= link.user.email %></small>
+        <!-- Adicionei verificação se e-mail existe -->
+        <small class="author">Enviado <%= time_ago_in_words(link.created_at) %>  <%= " por "+link.user.email if defined? "por "+link.user.email %></small>
       </h2>
       <div class="btn-group">
         <a href="<%= link.url %>" class="btn btn-default btn-sm">Visitar Link</a>

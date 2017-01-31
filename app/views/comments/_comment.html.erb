@@ -3,7 +3,7 @@
     <div class="pull-left">
       <p class="lead"><%= comment.body %></p>
       <p>
-        <small>Enviado <strong> <%= time_ago_in_words(comment.created_at) %> ago</strong> por <%= comment.user.email %></small>
+        <small>Enviado <strong> <%= time_ago_in_words(comment.created_at) %> ago</strong>  <%= " por "+comment.user.email if defined? " por "+comment.user.email %></small>
       </p>
     </div>
 
