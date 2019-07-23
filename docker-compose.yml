@@ -1,0 +1,22 @@
+version: "3"
+
+services:
+  database:
+    image: "mysql:5.7"
+    env_file: [".env"]
+    logging:
+      driver: "none"
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DATABASE_PASSWORD}
+
+  app:
+    depends_on: ["database"]
+    links: ["database"]
+    build: .
+    env_file: [".env"]
+    command: sh ./bin/start
+    ports: ["3000:3000"]
+    volumes: [".:/raddit", "gems:/gems"]
+    
+volumes:
+  gems:
